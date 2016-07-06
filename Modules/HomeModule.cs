@@ -14,8 +14,8 @@ namespace RockScissors
       };
       Post["/play"] = _ => {
         int playerinput = Request.Form["RockScissors"];
-        Console.WriteLine(playerinput.ToString());
         var game = new Game(playerinput);
+        Console.WriteLine(game.GetComputerPlay().ToString());
         return View["index.cshtml", game];
       };
 

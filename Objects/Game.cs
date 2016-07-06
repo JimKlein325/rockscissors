@@ -54,7 +54,7 @@ namespace RockScissors
     private void SetComputerPlayer()
     {
       Random random = new Random();
-      int randomPlay = random.Next(1, 4);
+      int randomPlay = random.Next(3);
       _computerPlay = GetPlayValue(randomPlay);
     }
 
@@ -75,10 +75,6 @@ namespace RockScissors
       SetValues (playerinput, computerinput);
 
       if(_play == _computerPlay) return Result.Draw;
-
-
-
-      if(_play == Play.Rock && _computerPlay == Play.Scissors) return Result.Win;
 
       switch(_play)
       {
@@ -108,7 +104,7 @@ namespace RockScissors
         default:
         return Result.Draw;
       }
-      return Result.Draw;
+
     }
 
     public Result PlayGame(){
@@ -148,7 +144,7 @@ namespace RockScissors
         default:
         return Result.Draw;
       }
-      return Result.Draw;
+
     }
   }
 }

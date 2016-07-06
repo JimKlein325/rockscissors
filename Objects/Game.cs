@@ -50,8 +50,40 @@ namespace RockScissors
     }
     public Result PlayGame(){
       if(_play == _computerPlay) return Result.Draw;
-      
-      return Result.Lose;
+
+
+
+      if(_play == Play.Rock && _computerPlay == Play.Scissors) return Result.Win;
+
+      switch(_play)
+      {
+        case Play.Rock:
+        if(_computerPlay == Play.Scissors)
+        {
+          return Result.Win;
+        } else {
+          return Result.Lose;
+        }
+
+        case Play.Scissors:
+        if(_computerPlay == Play.Paper)
+        {
+          return Result.Win;
+        } else {
+          return Result.Lose;
+        }
+        case Play.Paper:
+        if(_computerPlay == Play.Rock)
+        {
+          return Result.Win;
+        } else {
+          return Result.Lose;
+        }
+
+        default:
+          return Result.Draw;
+      }
+      return Result.Draw;
     }
 
     private Play GetComputersPlay(){

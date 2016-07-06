@@ -35,7 +35,21 @@ namespace RockScissors.Tests
       Assert.Equal(Result.Win, result);
 
     }
+    [Fact]
+    public void Play_InputsRockComputerPaper_Lose()
+    {
+      //Arrange
+      Game game = new Game(0,2);
 
+      //Act
+      Result result = game.PlayGame();
+
+      // string name = Allergy.GetAllergyListString();
+
+      //Assert
+      Assert.Equal(Result.Lose, result);
+
+    }
 
     public void Dispose()
     {

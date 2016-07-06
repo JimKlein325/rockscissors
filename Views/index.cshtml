@@ -1,7 +1,30 @@
-<h1>Leetspeak!</h1>
+<h1>Rock Scissors Paper!</h1>
 
-<form action="/">
-  <label for="user-string">Enter some text:</label>
-  <input type="text" name="user-string" id="user-string">
-  <button type="submit" name="button">Submit</button>
+<form action="/play" method="Post">
+<div class="radio">
+  <label>
+    <input type="radio" name="RockScissors" value="0" checked>
+    Rock
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="RockScissors" value="1">
+    Paper
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="RockScissors" value="2">
+    Scissors
+  </label>
+</div>
+  <button type="submit" name="button">Play</button>
 </form>
+@if(@Model.IsInitialState() != true)
+{
+<p>Result</p>
+<p>Your move was: @Model.GetPlayerInput()</p>
+<p>Computer move was: @Model.GetComputerPlay()</p>
+<p>@Model.PlayGame()</p>
+}

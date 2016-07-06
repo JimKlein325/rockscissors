@@ -1,5 +1,6 @@
 using Nancy;
 using System.Collections.Generic;
+using System;
 
 namespace RockScissors
 {
@@ -8,7 +9,14 @@ namespace RockScissors
     public HomeModule()
     {
       Get["/"] = _ => {
-        return View["index.cshtml"];
+        var game = new Game();
+        return View["index.cshtml", game];
+      };
+      Post["/play"] = _ => {
+        int playerinput = Request.Form["RockScissors"];
+        Console.WriteLine(playerinput.ToString());
+        var game = new Game(playerinput);
+        return View["index.cshtml", game];
       };
 
     }

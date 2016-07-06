@@ -9,10 +9,11 @@ namespace RockScissors.Tests
     public void Play_InputsAreEqualRR_Draw()
     {
       //Arrange
-      Game game = new Game(0,0);
+      Game game = new Game();
+
 
       //Act
-      Result result = game.PlayGame();
+      Result result = game.PlayGame(0,0);
 
       // string name = Allergy.GetAllergyListString();
 
@@ -24,10 +25,10 @@ namespace RockScissors.Tests
     public void Play_InputsRockComputerScissors_Win()
     {
       //Arrange
-      Game game = new Game(0,1);
+      Game game = new Game();
 
       //Act
-      Result result = game.PlayGame();
+      Result result = game.PlayGame(0,1);
 
       // string name = Allergy.GetAllergyListString();
 
@@ -39,10 +40,10 @@ namespace RockScissors.Tests
     public void Play_InputsRockComputerPaper_Lose()
     {
       //Arrange
-      Game game = new Game(0,2);
+      Game game = new Game();
 
       //Act
-      Result result = game.PlayGame();
+      Result result = game.PlayGame(0,2);
 
       // string name = Allergy.GetAllergyListString();
 
